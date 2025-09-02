@@ -1,5 +1,5 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/navigation';
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Shibu Raj Singh' }],
   creator: 'Shibu Raj Singh',
+  metadataBase: new URL('https://shibu-raj-singh.vercel.app'),
   openGraph: {
     title: 'Shibu Raj Singh - Java Backend & Full Stack Developer',
     description: 'Building scalable backends and modern web applications with Java, Spring Boot, Python, and React.',
@@ -35,12 +36,16 @@ export const metadata: Metadata = {
     title: 'Shibu Raj Singh - Java Backend & Full Stack Developer',
     description: 'Building scalable backends and modern web applications.',
   },
-  viewport: 'width=device-width, initial-scale=1',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#3B82F6' },
     { media: '(prefers-color-scheme: dark)', color: '#1E40AF' }
   ],
-};
+}
 
 export default function RootLayout({
   children,
